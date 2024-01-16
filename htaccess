@@ -3,7 +3,7 @@ RewriteEngine On
 #Redirecting test.zip to moved.zip in another folder. Petrik will complain about not relative paths, but i can't do that. fix if you want.
 RewriteRule ^redirect/files/test\.zip$ /28mod/redirect/media/moved\.zip [L,NC,R=301] 
 
-#Redirecting url to using $_GET. Petrik will complain about not relative paths, but i can't do that. fix if you want.
+#Redirecting url to use $_GET. Petrik will complain about not relative paths, but i can't do that. fix if you want.
 RewriteRule ^seo/user/13/edit$ /28mod/seo/index.php?mod=user&id=13&view=edit [L,NC]
 
 
