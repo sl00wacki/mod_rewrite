@@ -1,0 +1,22 @@
+RewriteEngine On
+
+#Redirecting test.zip to moved.zip in another folder. Petrik will complain about not relative paths, but i can't do that. fix if you want.
+RewriteRule ^redirect/files/test\.zip$ /28mod/redirect/media/moved\.zip [L,NC,R=301] 
+
+#Redirecting url to using $_GET. Petrik will complain about not relative paths, but i can't do that. fix if you want.
+RewriteRule ^seo/user/13/edit$ /28mod/seo/index.php?mod=user&id=13&view=edit [L,NC]
+
+
+<IfModule mod_rewrite.c>
+    # Adding .html if files don't have it.
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.+)$ $1.html [L]
+
+    # If not catalouge, going for files.
+    RewriteCond %{REQUEST_FILENAME} !-d
+</IfModule>
+
+#Errors page redirecting, change some error to anothers but leave 404! 
+ErrorDocument 403 /28mod/errors/index.php?error=403
+ErrorDocument 404 /28mod/errors/index.php?error=404
+ErrorDocument 500 /28mod/errors/index.php?error=500
